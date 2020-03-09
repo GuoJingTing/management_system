@@ -19,12 +19,20 @@
 	</properties>
 
 	<dependencies>
+		<!-- H2数据库 -->
+		<!--  https://mvnrepository.com/artifact/com.h2database/h2 -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.199</version>
+		</dependency>
+
 		<!--对象与json互换 fastjson-->
 		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.66</version>
+			<version>1.1.37</version>
 		</dependency>
 
 		<!--OKthhp-->
