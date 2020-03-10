@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>登录</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <link rel="stylesheet" href="static/css/easyui.css"/>
+    <link rel="stylesheet" href="static/css/icon.css"/>
+    <script src="static/js/jquery.easyui.min.js" type="application/javascript"></script>
+    <script src="static/js/jquery.min.js" type="application/javascript"></script>
+    <style type="text/css">
+        table {
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        tr {
+            height: 40px;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            //登录校验
+            $("#btnCon").click(function () {
+                //校验用户信息
+                if ($(":text").val() == "") {
+                    //使用EasyUI的信息框进行提示
+                    $.messager.alert('登录提示', "用户名不能为空！", "warning");
+                } else if ($(":password").val() == "") {
+                    //使用EasyUI的信息框进行提示
+                    $.messager.alert('登录提示', "密码不能为空！", "warning");
+                } else {
+                    $("form").submit();
+                }
+            })
+            //重置
+            $("#btnCan").click(function () {
+                $("form").get(0).reset();
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="panel_login" style="margin: auto;width: 500px;margin-top: 100px;">
+    <div id="login" class="easyui-panel" title="登录" data-options="iconCls:'icon-mlogin',minimizable:true,maximizable:true
+                ,collapsible:true,closable:true" style="width: 500px;height: 200px;">
+        <form action="#" method="get">
+            <table>
+                <tr>
+                    <td>用户名:</td>
+                    <td>
+                        <input type="text" name="username"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;密码:</td>
+                    <td>
+                        <input type="password" name="password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a id="btnCon" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">登录</a>&nbsp; &nbsp;&nbsp;
+                        <a id="btnCan" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'">重置</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
